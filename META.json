@@ -1,5 +1,5 @@
 {
-   "abstract" : "It's new $module",
+   "abstract" : "ChromeLogger for Perl",
    "author" : [
       "Tokuhiro Matsuno <tokuhirom@gmail.com>"
    ],
@@ -53,5 +53,16 @@
       }
    },
    "release_status" : "unstable",
+   "resources" : {
+      "bugtracker" : {
+         "web" : "https://github.com/tokuhirom/Web-ChromeLogger/issues"
+      },
+      "homepage" : "https://github.com/tokuhirom/Web-ChromeLogger",
+      "repository" : {
+         "type" : "git",
+         "url" : "git://github.com/tokuhirom/Web-ChromeLogger.git",
+         "web" : "https://github.com/tokuhirom/Web-ChromeLogger"
+      }
+   },
    "version" : "0.01"
 }

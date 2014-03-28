@@ -138,7 +138,7 @@ For more details, please see L<ChromeLogger's Technical Specification|http://cra
 
 =head2 NGINX PROXY
 
-If you are using nginx as reverse proxy, you need to set following paramters in your configuration file:
+If you are using nginx as reverse proxy, you need to set following parameters in your configuration file:
 
     proxy_buffer_size   128k;
     proxy_buffers   4 256k;
@@ -146,7 +146,7 @@ If you are using nginx as reverse proxy, you need to set following paramters in 
 
 =head2 Maximum Data Size
 
-Chrome has a limit of 250kb across all headers for a single request so that is the maximum amount of encoded data you can send.
+Chrome has a limit of C<250kb> across all headers for a single request so that is the maximum amount of encoded data you can send.
 
 =head1 METHODS
 
@@ -158,7 +158,7 @@ Create new instance with following parameters:
 
 =over 4
 
-=item json_encoder (Default: JSON::XS->new()->ascii(1)->convert_blessed)
+=item json_encoder (Default: C<< JSON::XS->new()->ascii(1)->convert_blessed >> )
 
 JSON encoder object. You can use JSON::XS or JSON::PP for this.
 
@@ -172,7 +172,7 @@ Push 'group'.
 
 =item C<< $logger->group_end($title: Str) >>
 
-Push 'groupEnd'.
+Push C<groupEnd>.
 
 =item C<< $logger->info($title: Str) >>
 
