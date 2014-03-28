@@ -3,7 +3,7 @@ use 5.008005;
 use strict;
 use warnings;
 
-our $VERSION = "0.01";
+our $VERSION = "0.02";
 
 use JSON::XS;
 use MIME::Base64;
@@ -138,7 +138,7 @@ For more details, please see L<ChromeLogger's Technical Specification|http://cra
 
 =head2 NGINX PROXY
 
-If you are using nginx as reverse proxy, you need to set following parameters in your configuration file:
+If you are using nginx as reverse proxy, you may need to set following parameters in your configuration file:
 
     proxy_buffer_size   128k;
     proxy_buffers   4 256k;
@@ -168,7 +168,7 @@ I guess you don't need to set this parameter.
 
 =item C<< $logger->group($title: Str) >>
 
-Push 'group'.
+Push C<group>.
 
 =item C<< $logger->group_end($title: Str) >>
 
@@ -176,11 +176,11 @@ Push C<groupEnd>.
 
 =item C<< $logger->info($title: Str) >>
 
-Push 'info'.
+Push C<info>.
 
 =item C<< $logger->warn($title: Str) >>
 
-Push 'warn'.
+Push C<warn>.
 
 =item C<< $logger->wrap_by_group($title: Str) >>
 

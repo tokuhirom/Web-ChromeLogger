@@ -35,7 +35,7 @@ For more details, please see [ChromeLogger's Technical Specification](http://cra
 
 ## NGINX PROXY
 
-If you are using nginx as reverse proxy, you need to set following parameters in your configuration file:
+If you are using nginx as reverse proxy, you may need to set following parameters in your configuration file:
 
     proxy_buffer_size   128k;
     proxy_buffers   4 256k;
@@ -59,7 +59,7 @@ Chrome has a limit of `250kb` across all headers for a single request so that is
 
 - `$logger->group($title: Str)`
 
-    Push 'group'.
+    Push `group`.
 
 - `$logger->group_end($title: Str)`
 
@@ -67,11 +67,11 @@ Chrome has a limit of `250kb` across all headers for a single request so that is
 
 - `$logger->info($title: Str)`
 
-    Push 'info'.
+    Push `info`.
 
 - `$logger->warn($title: Str)`
 
-    Push 'warn'.
+    Push `warn`.
 
 - `$logger->wrap_by_group($title: Str)`
 
