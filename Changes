@@ -2,6 +2,16 @@ Revision history for Perl extension Web-ChromeLogger
 
 {{$NEXT}}
 
+0.04 2014-03-30T10:13:25Z
+
+    commit 6b0776ae8d67e93fc87b797e61521597eb29f7cf
+    Author: bayashi <bayashi@cpan.org>
+    Date:   Sun Mar 30 12:56:23 2014 +0900
+
+    support JSON::XS 2.X
+    JSON::XS 2.X exports the 'to_json' method.
+    It's also implemeted in Web::ChromeLogger.
+
 0.03 2014-03-28T01:10:23Z
 
     - Fixed dependencies.
