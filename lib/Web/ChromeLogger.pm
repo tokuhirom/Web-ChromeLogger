@@ -5,7 +5,7 @@ use warnings;
 
 our $VERSION = "0.03";
 
-use JSON::XS;
+use JSON::XS qw//;
 use MIME::Base64;
 
 sub new {
