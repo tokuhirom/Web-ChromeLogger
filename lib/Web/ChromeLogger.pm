@@ -26,9 +26,21 @@ sub group {
     $self->push_log('group', @_);
 }
 
+sub groupf {
+    my $self   = shift;
+    my $format = shift;
+    $self->group(sprintf $format, @_);
+}
+
 sub group_end {
     my $self = shift;
     $self->push_log('groupEnd', @_);
+}
+
+sub group_endf {
+    my $self   = shift;
+    my $format = shift;
+    $self->group_end(sprintf $format, @_);
 }
 
 sub group_collapsed {
@@ -36,9 +48,21 @@ sub group_collapsed {
     $self->push_log('groupCollapsed', @_);
 }
 
+sub group_collapsedf {
+    my $self   = shift;
+    my $format = shift;
+    $self->group_collapsed(sprintf $format, @_);
+}
+
 sub info {
     my $self = shift;
     $self->push_log('info', @_);
+}
+
+sub infof {
+    my $self   = shift;
+    my $format = shift;
+    $self->info(sprintf $format, @_);
 }
 
 sub warn {
@@ -46,9 +70,21 @@ sub warn {
     $self->push_log('warn', @_);
 }
 
+sub warnf {
+    my $self   = shift;
+    my $format = shift;
+    $self->warn(sprintf $format, @_);
+}
+
 sub error {
     my $self = shift;
     $self->push_log('error', @_);
+}
+
+sub errorf {
+    my $self   = shift;
+    my $format = shift;
+    $self->error(sprintf $format, @_);
 }
 
 # User can overwrite this method in child class.
@@ -79,6 +115,12 @@ sub wrap_by_group {
     my ($self, $title) = @_;
     $self->unshift_log('group', $title);
     $self->push_log('groupEnd', $title);
+}
+
+sub wrap_by_groupf {
+    my $self   = shift;
+    my $format = shift;
+    $self->wrap_by_group(sprintf $format, @_);
 }
 
 sub push_log {
@@ -112,6 +154,7 @@ Web::ChromeLogger - ChromeLogger for Perl
     get '/', sub {
         my $logger = Web::ChromeLogger->new();
         $logger->info('hey!');
+        $logger->infof('Hello, %s!', 'John');
 
         my $html = render_html();
 
@@ -168,21 +211,43 @@ I guess you don't need to set this parameter.
 
 =item C<< $logger->group($title: Str) >>
 
+=item C<< $logger->groupf($format: Str, @list) >>
+
 Push C<group>.
 
 =item C<< $logger->group_end($title: Str) >>
 
+=item C<< $logger->group_endf($format: Str, @list) >>
+
 Push C<groupEnd>.
 
+=item C<< $logger->group_collapsed($title: Str) >>
+
+=item C<< $logger->group_collapsedf($format: Str, @list) >>
+
+Push C<groupCollapsed>.
+
 =item C<< $logger->info($title: Str) >>
+
+=item C<< $logger->infof($format: Str, @list) >>
 
 Push C<info>.
 
 =item C<< $logger->warn($title: Str) >>
 
+=item C<< $logger->warnf($format: Str, @list) >>
+
 Push C<warn>.
 
+=item C<< $logger->error($title: Str) >>
+
+=item C<< $logger->errorf($format: Str, @list) >>
+
+Push C<error>.
+
 =item C<< $logger->wrap_by_group($title: Str) >>
+
+=item C<< $logger->wrap_by_groupf($format: Str, @list) >>
 
 Wrap current logging data by C<$title> group.
 
