@@ -1,2 +1,7 @@
 name = "Web-ChromeLogger"
 # badges = ["travis"]
+
+[release]
+hooks = [
+    "perl author/generate_nop.pl"
+]
