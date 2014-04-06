@@ -9,7 +9,7 @@ use FindBin;
 use lib "$FindBin::Bin/../lib";
 use Web::ChromeLogger;
 
-my @public_methods = grep { $_ ne 'new' } @{Class::Inspector->methods('Web::ChromeLogger', 'public')};
+my @public_methods = grep { $_ !~ /(?:new|finalize)/ } @{Class::Inspector->methods('Web::ChromeLogger', 'public')};
 
 my $nop_source = <<'...';
 # =========================================================================
@@ -20,10 +20,15 @@ my $nop_source = <<'...';
 package Web::ChromeLogger::NOP;
 use strict;
 use warnings;
+use Carp ();
 
 sub new {
     my $class = shift;
     bless {}, $class;
+}
+
+sub finalize {
+    Carp::croak "Web::ChromeLogger::NOP cannot finalize logs";
 }
 
 ...
@@ -70,7 +75,19 @@ This class provides methods that don't work anything.
 
 =head1 METHODS
 
-Provided methods are the same as C<Web::ChromeLogger>.
+=over 4
+
+=item C<< my $logger = Web::ChromeLogger::NOP->new() >>
+
+Returns instance of Web::ChromeLogger::NOP.
+
+=item C<< $logger->finalize() >>
+
+Always throws exception.
+
+=back
+
+And other provided methods are the same as C<Web::ChromeLogger>, but they don't work anything.
 
 =head1 SEE ALSO
 

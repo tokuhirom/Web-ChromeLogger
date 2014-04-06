@@ -8,7 +8,6 @@ my $logger = Web::ChromeLogger::NOP->new;
 subtest 'Do nothing' => sub {
     ok !$logger->encode;
     ok !$logger->error;
-    ok !$logger->finalize;
     ok !$logger->group;
     ok !$logger->group_collapsed;
     ok !$logger->group_end;
@@ -19,6 +18,9 @@ subtest 'Do nothing' => sub {
     ok !$logger->unshift_log;
     ok !$logger->warn;
     ok !$logger->wrap_by_group;
+
+    eval { $logger->finalize };
+    ok $@, 'dies ok';
 };
 
 done_testing;
