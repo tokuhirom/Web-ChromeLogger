@@ -9,6 +9,7 @@ Web::ChromeLogger - ChromeLogger for Perl
     get '/', sub {
         my $logger = Web::ChromeLogger->new();
         $logger->info('hey!');
+        $logger->infof('Hello, %s!', 'John');
 
         my $html = render_html();
 
@@ -58,22 +59,37 @@ Chrome has a limit of `250kb` across all headers for a single request so that is
         I guess you don't need to set this parameter.
 
 - `$logger->group($title: Str)`
+- `$logger->groupf($format: Str, @list)`
 
     Push `group`.
 
 - `$logger->group_end($title: Str)`
+- `$logger->group_endf($format: Str, @list)`
 
     Push `groupEnd`.
 
+- `$logger->group_collapsed($title: Str)`
+- `$logger->group_collapsedf($format: Str, @list)`
+
+    Push `groupCollapsed`.
+
 - `$logger->info($title: Str)`
+- `$logger->infof($format: Str, @list)`
 
     Push `info`.
 
 - `$logger->warn($title: Str)`
+- `$logger->warnf($format: Str, @list)`
 
     Push `warn`.
 
+- `$logger->error($title: Str)`
+- `$logger->errorf($format: Str, @list)`
+
+    Push `error`.
+
 - `$logger->wrap_by_group($title: Str)`
+- `$logger->wrap_by_groupf($format: Str, @list)`
 
     Wrap current logging data by `$title` group.
 
