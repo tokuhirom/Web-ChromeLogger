@@ -3,7 +3,7 @@ use 5.008005;
 use strict;
 use warnings;
 
-our $VERSION = "0.04";
+our $VERSION = "0.05";
 
 use JSON::XS qw//;
 use MIME::Base64 qw//;
@@ -268,6 +268,8 @@ it under the same terms as Perl itself.
 =head1 AUTHOR
 
 Tokuhiro Matsuno E<lt>tokuhirom@gmail.comE<gt>
+
+moznion
 
 =head1 SEE ALSO
 
