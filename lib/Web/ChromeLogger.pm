@@ -6,7 +6,7 @@ use warnings;
 our $VERSION = "0.04";
 
 use JSON::XS qw//;
-use MIME::Base64;
+use MIME::Base64 qw//;
 
 sub new {
     my $class = shift;
