@@ -14,7 +14,8 @@ sub new {
     my $self  = bless {
         %args
     }, $class;
-    $self->{'json_encoder'} ||= JSON::XS->new()->ascii(1)->convert_blessed;
+    # allow_unknown: Should not throw an exception if when it encounters values it cannot represent in JSON.
+    $self->{'json_encoder'} ||= JSON::XS->new()->ascii(1)->convert_blessed->allow_unknown;
     $self->{'logs'} = [];
     return $self;
 }
