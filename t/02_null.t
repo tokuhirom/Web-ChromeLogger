@@ -1,10 +1,10 @@
 use strict;
 use warnings;
-use Web::ChromeLogger::NOP;
+use Web::ChromeLogger::Null;
 
 use Test::More;
 
-my $logger = Web::ChromeLogger::NOP->new;
+my $logger = Web::ChromeLogger::Null->new;
 subtest 'Do nothing' => sub {
     ok !$logger->encode;
     ok !$logger->error;

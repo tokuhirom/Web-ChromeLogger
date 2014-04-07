@@ -3,5 +3,5 @@ name = "Web-ChromeLogger"
 
 [release]
 hooks = [
-    "perl author/generate_nop.pl"
+    "perl author/generate_null.pl"
 ]
