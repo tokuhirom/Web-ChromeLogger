@@ -107,7 +107,7 @@ sub encode {
         },
     );
     my $mime_data = MIME::Base64::encode_base64($json_data);
-    $mime_data =~ s/\n/''/g;
+    $mime_data =~ s/\n//g;
 
     return $mime_data;
 }
