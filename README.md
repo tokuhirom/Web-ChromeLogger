@@ -106,7 +106,7 @@ it under the same terms as Perl itself.
 
 # AUTHOR
 
-Tokuhiro Matsuno <tokuhirom@gmail.com>
+Tokuhiro Matsuno &lt;tokuhirom@gmail.com>
 
 moznion
 

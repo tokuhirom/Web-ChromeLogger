@@ -4,7 +4,7 @@
       "Tokuhiro Matsuno <tokuhirom@gmail.com>"
    ],
    "dynamic_config" : 0,
-   "generated_by" : "Minilla/v0.13.0, CPAN::Meta::Converter version 2.140640",
+   "generated_by" : "Minilla/v2.5.0, CPAN::Meta::Converter version 2.150005",
    "license" : [
       "perl_5"
    ],
@@ -38,6 +38,7 @@
             "Class::Inspector" : "0",
             "Test::CPAN::Meta" : "0",
             "Test::MinimumVersion::Fast" : "0.04",
+            "Test::PAUSE::Permissions" : "0.04",
             "Test::Pod" : "1.41",
             "Test::Spellunker" : "v0.2.7"
          }
@@ -67,10 +68,12 @@
          "web" : "https://github.com/tokuhirom/Web-ChromeLogger"
       }
    },
-   "version" : "0.05",
+   "version" : "0.06",
+   "x_authority" : "cpan:TOKUHIROM",
    "x_contributors" : [
       "bayashi <bayashi@cpan.org>",
-      "moznion <moznion@linecorp.com>",
-      "moznion <moznion@gmail.com>"
-   ]
+      "moznion <moznion@gmail.com>",
+      "Kang-min Liu <gugod@gugod.org>"
+   ],
+   "x_serialization_backend" : "JSON::PP version 2.27300"
 }
